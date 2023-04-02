@@ -18,7 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello/{name}', [ScreenController::class,'hellow']);
+Route::get('/hello/{name}', [ScreenController::class,'hellow'])
+->where('name','[a-zA-Z]{3}');
 
 Route::get('/conta/{numero1}/{numero2}/{operacao?}', 
 [ScreenController::class,'operations'])
